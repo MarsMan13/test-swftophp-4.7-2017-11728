@@ -3198,8 +3198,8 @@ decompileAction(int n, SWF_ACTION *actions, int maxn)
 		decompileGETMEMBER(n, actions, maxn);
 		return 0;
 
-	case SWFACTION_SETMEMBER:	*aabbcc=1;
-		decompileSETMEMBER(n, actions, maxn);
+	case SWFACTION_SETMEMBER:	
+		*aabbcc=1; decompileSETMEMBER(n, actions, maxn);
 		return 0;
 
 	case SWFACTION_GETVARIABLE:
