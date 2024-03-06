@@ -2985,9 +2985,9 @@ void parseABC_NS_INFO(struct ABC_NS_INFO *nsinfo, FILE *f)
   nsinfo->Kind = readUInt8(f);
   nsinfo->Name = readEncUInt30(f);
 }
-int *cgcgcg=NULL;
+
 void parseABC_NS_SET_INFO(struct ABC_NS_SET_INFO *nsset, FILE *f)
-{ *cgcgcg=1;
+{
   int i;
   nsset->Count = readEncUInt30(f);
   nsset->NS = malloc(sizeof(U30) * nsset->Count);
