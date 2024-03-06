@@ -3108,7 +3108,7 @@ decompileCAST(int n, SWF_ACTION *actions, int maxn)
 
 int
 decompileAction(int n, SWF_ACTION *actions, int maxn)
-{   int* aabbcc=NULL;
+{
 	if( n > maxn ) SWF_error("Action overflow!!");
 
 #ifdef DEBUG
@@ -3199,7 +3199,7 @@ decompileAction(int n, SWF_ACTION *actions, int maxn)
 		return 0;
 
 	case SWFACTION_SETMEMBER:	
-		*aabbcc=1; decompileSETMEMBER(n, actions, maxn);
+		decompileSETMEMBER(n, actions, maxn);
 		return 0;
 
 	case SWFACTION_GETVARIABLE:
