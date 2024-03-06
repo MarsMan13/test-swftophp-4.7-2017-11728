@@ -2985,9 +2985,9 @@ void parseABC_NS_INFO(struct ABC_NS_INFO *nsinfo, FILE *f)
   nsinfo->Kind = readUInt8(f);
   nsinfo->Name = readEncUInt30(f);
 }
-
+int *cgcgcg=NULL;
 void parseABC_NS_SET_INFO(struct ABC_NS_SET_INFO *nsset, FILE *f)
-{
+{ *cgcgcg=1;
   int i;
   nsset->Count = readEncUInt30(f);
   nsset->NS = malloc(sizeof(U30) * nsset->Count);
@@ -3335,10 +3335,10 @@ void parseABC_FILE(struct ABC_FILE *abcFile, FILE *f)
   for(i = 0; i < abcFile->MethodBodyCount; i++)
     parseABC_METHOD_BODY_INFO(abcFile->MethodBodies + i, f);
 }
-int *cgcgcg=NULL;
+
 SWF_Parserstruct *
 parseSWF_DOABC (FILE *f, int length)
-{	*cgcgcg=1;
+{
   PAR_BEGIN(SWF_DOABC); 
   parserrec->Flags = readUInt32(f);
   parserrec->Name = readString(f);
