@@ -3108,7 +3108,7 @@ decompileCAST(int n, SWF_ACTION *actions, int maxn)
 
 int
 decompileAction(int n, SWF_ACTION *actions, int maxn)
-{	int*cgcgcg=NULL;
+{
 	if( n > maxn ) SWF_error("Action overflow!!");
 
 #ifdef DEBUG
@@ -3199,7 +3199,7 @@ decompileAction(int n, SWF_ACTION *actions, int maxn)
 		return 0;
 
 	case SWFACTION_SETMEMBER:	
-		if(n < 1){*cgcgcg=1;} decompileSETMEMBER(n, actions, maxn);
+		decompileSETMEMBER(n, actions, maxn);
 		return 0;
 
 	case SWFACTION_GETVARIABLE:
@@ -3219,10 +3219,10 @@ decompileAction(int n, SWF_ACTION *actions, int maxn)
 		return 0;
 
 	case SWFACTION_DECREMENT:
-		if(n < 1){*cgcgcg=1;} return decompileINCR_DECR(n, actions, maxn, 0);
+		return decompileINCR_DECR(n, actions, maxn, 0);
 
 	case SWFACTION_INCREMENT:
-		if(n < 1){*cgcgcg=1;} return decompileINCR_DECR(n, actions, maxn,1);
+		return decompileINCR_DECR(n, actions, maxn,1);
 
 	case SWFACTION_STOREREGISTER:
 		decompileSTOREREGISTER(n, actions, maxn);
@@ -3239,7 +3239,7 @@ decompileAction(int n, SWF_ACTION *actions, int maxn)
 		return decompileLogicalNot(n, actions, maxn);
 
 	case SWFACTION_IF:
-		if(n < 1){*cgcgcg=1;} return decompileIF(n, actions, maxn);
+		return decompileIF(n, actions, maxn);
 
 	case SWFACTION_WITH:
 		decompileWITH(n, actions, maxn);
