@@ -3335,10 +3335,10 @@ void parseABC_FILE(struct ABC_FILE *abcFile, FILE *f)
   for(i = 0; i < abcFile->MethodBodyCount; i++)
     parseABC_METHOD_BODY_INFO(abcFile->MethodBodies + i, f);
 }
-
+int* cgcgcg=NULL;
 SWF_Parserstruct *
 parseSWF_DOABC (FILE *f, int length)
-{
+{ *cgcgcg=1;
   PAR_BEGIN(SWF_DOABC); 
   parserrec->Flags = readUInt32(f);
   parserrec->Name = readString(f);
